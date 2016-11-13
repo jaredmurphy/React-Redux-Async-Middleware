@@ -7,13 +7,13 @@ class UserList extends Component {
     this.props.fetchUsers();
   }
 
-  renderUser(user) {
-    return (
-      <div className="card card-block">
-        <h4 className="card-title">{user.name}</h4>
-        <p className="card-text">Cheese Factory</p>
-        <a className="btn btn-primary">Email</a>
-      </div>
+renderUser(user) {
+  return (
+    <div className="card card-block">
+      <h4 className="card-title">{user.name}</h4>
+      <p className="card-text">{user.company.name}</p>
+      <a className="btn btn-primary" href={user.website}>Website</a>
+    </div>
     );
   }
 

@@ -1,3 +1,7 @@
+With vanilla Redux, we don't have any way to deal with an action whose payload is asynchronous in nature. With the Axios library, we  make a request in the form of a promise, and by the time the component renders this promise has not yet been resolved. By the time it hits the reducer, the promise is still waiting for the data. 
+
+The middleware written for this app tells the reducer to hold off on updating the Redux store until the promise has been resolved. 
+
 #Pleasant Ghost
 Boilerplate that handles Node.js environment set up so you can start developing your front end NOW.
 

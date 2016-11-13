@@ -1,9 +1,9 @@
 {
-  "name": "pleasant_ghost",
+  "name": "react_redux_async_middleware",
   "version": "1.0.0",
-  "description": "Handles environment behind the scenes so you don't have to.",
+  "description": "A demonstration of how to write custom Redux middlware for use in async, promised-based action creators. Built with React, Redux, Axios, and Bootstrap.",
   "main": "index.js",
-  "repository": "git@github.com:jaredmurphy/pleasant_ghost.git",
+  "repository": "",
   "scripts": {
     "start": "node ./node_modules/webpack-dev-server/bin/webpack-dev-server.js",
     "test": "mocha --compilers js:babel-core/register --require ./test/test_helper.js --recursive ./test",

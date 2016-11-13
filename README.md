@@ -1,28 +1,23 @@
-With vanilla Redux, we don't have any way to deal with an action whose payload is asynchronous in nature. With the Axios library, we  make a request in the form of a promise, and by the time the component renders this promise has not yet been resolved. By the time it hits the reducer, the promise is still waiting for the data. 
+# React-Redux Async Middleware
+A demonstration of how to write custom Redux middleware for use in async, promised-based action creators. Built with React, Redux, Axios, and Bootstrap.
 
-The middleware written for this app tells the reducer to hold off on updating the Redux store until the promise has been resolved. 
+#### The Problem with asnyc Redux actions
 
-#Pleasant Ghost
-Boilerplate that handles Node.js environment set up so you can start developing your front end NOW.
+With vanilla Redux, we don't have any way to deal with an action whose payload is asynchronous in nature. Using the Axios library, we can make a request in the form of a promise. By the time the component renders, this promise has not yet been resolved. The promise is still waiting for the data when the action sends its payload to the reducer. 
 
-###What You Get
-* React, React-DOM, React-Router
-* Redux, Redux-Promise, Redux-Form
-* Babel
-* Webpack
-* Axios
-* jQuery
-* Materialize
-* Lodash
-* Mocha
-* Chai
+#### Middleware solution 
+This middleware can be found in `src/middlewares/async.js`
 
-###Usage
+The middleware written for this app forces the promise to be resolved first and then sends the new payload back up the middlware tree, eventually sending the payload to the reducer which will update the Redux store.
+
+Now, the Redux store is updated with the data we want, and the component renders its information correctly. 
+
+#### Usage
 - Clone this repo
 - npm install
 - npm start
 - Go to localhost:8080
-- See your first working React component in action
+- See the correct data rendered on the page. 
 
-###Contribute
+#### Contribute
 Fork, make changes, submit pull request.
